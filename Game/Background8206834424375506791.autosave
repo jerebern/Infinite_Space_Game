@@ -13,6 +13,7 @@ public class Background {
         for(Entity entity : entities){  
             entity.Move();
             if(entity.Check_BorderY()){
+                print("out");
             float randomX = random(width);
              entity = new Entity(235, 235, 152, false,createShape(ELLIPSE,randomX,0,10,10),0,0,new PVector(0,0));                
             }

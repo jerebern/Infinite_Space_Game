@@ -1,12 +1,12 @@
 public class Entity{
     protected color c;
     protected boolean  isSolid;
-    protected PShape objectshape;
+    private PShape objectshape;
     private PVector location;
     private PVector acceleration;
 
     public Entity(){
-
+     
     }
      
     public Entity(int r, int g, int b, boolean isSolid, PShape objectshape, float x, float y, PVector acceleration ) {

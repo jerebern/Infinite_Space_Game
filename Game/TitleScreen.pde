@@ -27,7 +27,7 @@ public class TitleScreen  {
 
         }
 
-        print(this.selectedItem + "\n");
+       // print(this.selectedItem + "\n");
 /*
         if(selectedItem >= numberofItems)
             this.selectedItem = this.numberofItems - 1;
@@ -40,8 +40,9 @@ public class TitleScreen  {
     }
 
     public void Display(){
-                textSize(60);
-                text("Infinite Space Game", width /2, 100); 
+       fill(235, 213, 52);
+       textSize(60);
+       text("Infinite Space Game", width /2, 100); 
 
         switch (this.selectedItem) {
             case 0 :
@@ -63,6 +64,6 @@ public class TitleScreen  {
             break;	          
         }
         textAlign(CENTER);
-        fill(235, 213, 52);
+  
     }
 }

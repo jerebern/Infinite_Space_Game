@@ -1,0 +1,25 @@
+public class Background {
+    private int Max_Star;
+    private color c;
+    private ArrayList <Entity> entities;
+    
+    public Background (int r,int g, int b) {
+        Max_Star = 20;
+        entities = new ArrayList<Entity>();
+        c = color(r,g,b);
+    }
+    public void Generate(){
+        Entity entity = new Entity(235, 235, 152, false,createShape(,0,0,10,10),200,200,new PVector(0,0));
+        for(int i = 0; i < Max_Star; i++){
+
+            entities.add(entity);
+        }
+    }
+    public void Display(){
+        for(Entity entity : entities){
+            entity.Display();
+        }
+
+    }
+
+}
