@@ -11,10 +11,14 @@ public class Background {
     }
     public void Animate(){
         for(Entity entity : entities){  
-            entity.Move();
+            entity.MoveY(1);
             if(entity.Check_BorderY()){
+                print("return true");
             float randomX = random(width);
-             entity = new Entity(235, 235, 152, false,createShape(ELLIPSE,randomX,0,10,10),0,0,new PVector(0,0));                
+             //tmp to keep track of the position
+             entity.setPosX(randomX);  
+             entity.setPosY(0);       
+             entity.setObjectShape(createShape(ELLIPSE,randomX,0,10,10));       
             }
         }
     }
@@ -23,7 +27,7 @@ public class Background {
         for(int i = 0; i < Max_Star; i++){
         float randomX = random(width);
         float randomY = random(height);
-        Entity entity = new Entity(235, 235, 152, false,createShape(ELLIPSE,randomX,randomY,10,10),randomX,randomY,new PVector(0,0));
+        Entity entity = new Entity(235, 235, 152, false,createShape(ELLIPSE,0,0,10,10),randomX,randomY,new PVector(0,0));
             entities.add(entity);
         }
     }
