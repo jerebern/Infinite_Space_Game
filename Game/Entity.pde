@@ -11,15 +11,14 @@ public class Entity{
 
     }
      
-    public Entity(int r, int g, int b, boolean isSolid, PShape objectshape, float x, float y, PVector acceleration ) {
+    public Entity(int r, int g, int b, boolean isSolid, PShape objectshape, float x, float y ) {
         this.c = color(r,g,b);
         this.isSolid = isSolid;
         this.objectshape = objectshape;
         this.PosX = x;
         this.PosY = y;
-        this.location = new PVector(x,y);
-        this.acceleration = new PVector();
-
+         this.location = new PVector(x,y);
+        //this.acceleration = new PVector();
     }
     public boolean CheckifSolid(){
 
@@ -61,7 +60,7 @@ public class Entity{
      }  
 
      public boolean Check_BorderX(){
-         if(this.PosX > width)
+         if(this.PosX > width || this.PosX < 0)
             return true;
         else 
             return false;

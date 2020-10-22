@@ -11,7 +11,8 @@ public class SpaceShip extends Entity{
 
     }
       
-    public SpaceShip (int Damage, int HitPoints, int MaxHitPoints, float Speed){
+    public SpaceShip (int Damage, int HitPoints, int MaxHitPoints, float Speed, PShape shape, float posX, float posY, int r, int g, int b){
+        super(r, g, b, true, shape, posX, posY);
         this.Alive = true;
         this.HitPoints = HitPoints;
         this.MaxHitPoints = MaxHitPoints;
@@ -31,9 +32,18 @@ public class SpaceShip extends Entity{
     }
     public void MoveLeft(){
         MoveX(Speed * -1);
+        //reverse if return true;
+        if(Check_BorderX())
+         MoveX(Speed);       
     }
     public void MoveRight(){
         MoveX(Speed);
+        //reverse if return true
+        if(Check_BorderX())
+         MoveX( -1 * Speed);   
+    }
+    public void Attack(){
+        println("POW POW");
     }
 
 

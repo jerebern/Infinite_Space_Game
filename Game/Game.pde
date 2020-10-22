@@ -8,8 +8,9 @@ GameState gameState;
 TitleScreen titleScreen; 
 Background background;
 Input input;
-
+Player player;
 void setup() {
+    player = new Player();
     gameState = GameState.TITLESCREEN;
     size(1024,768);
     this.titleScreen = new TitleScreen();
@@ -33,6 +34,9 @@ void draw() {
             gameState = GameState.QUIT;
         break;
     case INGAME:
+
+    player.Display();
+    player.Actions();
 
     break;
 

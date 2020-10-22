@@ -26,7 +26,7 @@ public class Background {
         for(int i = 0; i < Max_Star; i++){
         float randomX = random(width);
         float randomY = random(height);
-        Entity entity = new Entity(235, 235, 152, false,createShape(ELLIPSE,0,0,10,10),randomX,randomY,new PVector(0,0));
+        Entity entity = new Entity(235, 235, 152, false,createShape(ELLIPSE,0,0,10,10),randomX,randomY);
             entities.add(entity);
         }
     }
