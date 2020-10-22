@@ -11,9 +11,8 @@ public class Background {
     }
     public void Animate(){
         for(Entity entity : entities){  
-            entity.MoveY(1);
+            entity.MoveY(3);
             if(entity.Check_BorderY()){
-                print("return true");
             float randomX = random(width);
              //tmp to keep track of the position
              entity.setPosX(randomX);  

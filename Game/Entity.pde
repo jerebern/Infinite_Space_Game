@@ -25,9 +25,15 @@ public class Entity{
 
         return this.isSolid;
     }
-    public void MoveY(int direction){
+    public void MoveY(float direction){
         this.objectshape.translate(0,direction);
         this.PosY = this.PosY + direction;
+        //location = new PVector(this.objectshape.getVertexX(1),this.objectshape.getVertexY(1));
+
+    }
+    public void MoveX(float direction){
+        this.objectshape.translate(direction,0);
+        this.PosX = this.PosX + direction;
         //location = new PVector(this.objectshape.getVertexX(1),this.objectshape.getVertexY(1));
 
     }
@@ -48,7 +54,6 @@ public class Entity{
          this.objectshape = shape;
      }
      public boolean Check_BorderY(){
-        println(PosY);
          if(this.PosY > height)
             return true;
         else 

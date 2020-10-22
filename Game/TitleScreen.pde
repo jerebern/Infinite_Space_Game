@@ -38,6 +38,18 @@ public class TitleScreen  {
         */
   
     }
+    public String SelectSomething(){
+     if(input.ScanKeybord() == "ACTION"){
+        if(this.selectedItem == 0) 
+             return "PLAY";
+        
+        else if(this.selectedItem == 1) 
+             return "EXIT";
+        }
+    
+        return "";
+    }
+
 
     public void Display(){
        fill(235, 213, 52);

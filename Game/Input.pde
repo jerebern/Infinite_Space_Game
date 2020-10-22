@@ -12,7 +12,9 @@ public class Input{
         else if(key == 'A' || key == 'A')
             return "LEFT";    
         else if(key == 'D' || key == 'd')
-            return "RIGHT";   
+            return "RIGHT";
+         else if(key == ' ')
+            return "ACTION";              
         else
             return "NOT DEFINE KEY";
 
