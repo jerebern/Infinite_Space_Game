@@ -3,8 +3,8 @@ public class Input{
     public Input(){
 
     }
-
-   public String ScanKeybord(){
+      public String ScanKeybord(){
+       //reset the key pressed
         if(key == 'w' || key == 'W')
             return "UP";
         else if(key == 's' || key == 'S')
