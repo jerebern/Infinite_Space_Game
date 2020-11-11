@@ -3,6 +3,7 @@ public class SpaceShip extends Entity{
     private int Damage;
     private int HitPoints;
     private int MaxHitPoints;
+    private int score;
     private boolean Alive;
     private float Speed;
     private Laser[] lasers;
@@ -80,7 +81,10 @@ public class SpaceShip extends Entity{
                 lasers[i].Display();
             }
          }
-
+        fill(235, 213, 52);
+         textSize(20);
+         text("Score : " + this.score,100,20);
+         text("Hit point : " + this.HitPoints,100,40);
     }
 
 
