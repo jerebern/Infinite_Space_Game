@@ -30,7 +30,7 @@
     private void Actions(){
 
         if(input.ScanKeybord() == "ACTION")
-            Attack();
+            Attack(-1);
         
         if(input.ScanKeybord() == "RIGHT")
             MoveRight();

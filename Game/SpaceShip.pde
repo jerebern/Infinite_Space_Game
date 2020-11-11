@@ -58,19 +58,21 @@ public class SpaceShip extends Entity{
         if(Check_BorderX())
          MoveX( -1 * Speed);   
     }
-    public void Attack(){
+    public void Attack(int direction){
       //  println("POW POW");
-        if(timeSinceLastattack < millis() || timeSinceLastattack == 0){
-            println(millis());
+        if(timeSinceLastattack < millis()){
          for(int i = 0; i < MaxLaser; i++){
              if(!lasers[i].CheckIfActive()){
-                 lasers[i] = new Laser(this.PosX + 20, this.PosY - 125,-10);
+                 lasers[i] = new Laser(this.PosX + 20, this.PosY - 125,10 * direction);
                  timeSinceLastattack = millis() + acttackSpeed;
                  break;
              }
 
          }
         }
+    }
+    public void Attack(){
+        
     }
 
     public void Display(){

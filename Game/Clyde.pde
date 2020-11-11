@@ -1,6 +1,6 @@
 public class Clyde extends Enemy {
     public Clyde (float x, float y) {
-        super(1,2,2,3,createShape(ELLIPSE,x,y,50,50),x,y,235, 155, 19,5);
+        super(1,2,2,3,createShape(ELLIPSE,x,y,50,50),x,y,235, 155, 19,500);
         
     }
     public void move(){
@@ -10,6 +10,11 @@ public class Clyde extends Enemy {
         }
         else {
             super.move("left");
+        }
+    }
+    public void Attack(){
+        if(random(0,100) < 5){
+            super.Attack(1);
         }
     }
     

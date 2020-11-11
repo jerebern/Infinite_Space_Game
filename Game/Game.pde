@@ -45,6 +45,7 @@ void draw() {
     player.Display();
     ennemy.Display();
     ennemy.move();
+    ennemy.Attack();
 
     break;
 

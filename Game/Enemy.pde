@@ -18,9 +18,10 @@ public class Enemy extends SpaceShip {
                 break;           
             
         }
-        timeSinceLastMove = millis() + 500;
+        timeSinceLastMove = millis() + 250;
         }
         }
+   
 
 
 }
