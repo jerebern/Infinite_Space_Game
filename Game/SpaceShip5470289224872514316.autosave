@@ -6,19 +6,13 @@ public class SpaceShip extends Entity{
     private boolean Alive;
     private float Speed;
     private Laser[] lasers;
-    private int timeSinceLastattack;
-    private int acttackSpeed;
 
     public SpaceShip (){
-    this.lasers = new Laser[MaxLaser];    
-        for(int i = 0; i < MaxLaser; i++){
-                 lasers[i] = new Laser();
-         }
-          this.timeSinceLastattack = 0;
+        this.lasers = new Laser[MaxLaser];
         Alive = true;
     }
       
-    public SpaceShip (int Damage, int HitPoints, int MaxHitPoints, float Speed, PShape shape, float posX, float posY, int r, int g, int b, int acttackSpeed){
+    public SpaceShip (int Damage, int HitPoints, int MaxHitPoints, float Speed, PShape shape, float posX, float posY, int r, int g, int b){
         super(r, g, b, true, shape, posX, posY);
         this.Alive = true;
         this.HitPoints = HitPoints;
@@ -26,13 +20,6 @@ public class SpaceShip extends Entity{
         this.Speed = Speed;
         this.MaxLaser = 3;
         this.lasers = new Laser[MaxLaser];
-        this.timeSinceLastattack = 0;
-        this.acttackSpeed = acttackSpeed;
-
-        for(int i = 0; i < MaxLaser; i++){
-                lasers[i] = new Laser();
-         }
-        
     }   
 
     public int GetHitPoint(){
@@ -60,25 +47,11 @@ public class SpaceShip extends Entity{
     }
     public void Attack(){
         println("POW POW");
-        if(timeSinceLastattack < millis() || timeSinceLastattack == 0){
-            println(millis());
          for(int i = 0; i < MaxLaser; i++){
              if(!lasers[i].CheckIfActive()){
-                 lasers[i] = new Laser(this.PosX + 20, this.PosY - 125,-10);
-                 timeSinceLastattack = millis() + acttackSpeed;
+                 lasers[i] = new Laser(this.PosX, this.PosY);
                  break;
              }
-
-         }
-        }
-    }
-
-    public void Display(){
-        super.Display();
-        for(int i = 0; i < MaxLaser; i++){
-            if(lasers[i].CheckIfActive()){
-                lasers[i].Display();
-            }
          }
 
     }

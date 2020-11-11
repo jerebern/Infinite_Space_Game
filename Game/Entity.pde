@@ -1,27 +1,28 @@
+//to do colision boxe 
+
 public class Entity{
     protected color c;
     protected boolean  isSolid;
     protected PShape objectshape;
     private PVector location;
     private PVector acceleration;
-    private float PosX;
-    private float PosY;
+    protected float PosX;
+    protected float PosY;
 
     public Entity(){
-
     }
      
-    public Entity(int r, int g, int b, boolean isSolid, PShape objectshape, float x, float y ) {
+    public Entity(int r, int g, int b, boolean isSolid, PShape objectshape,float x, float y) {
         this.c = color(r,g,b);
         this.isSolid = isSolid;
         this.objectshape = objectshape;
         this.PosX = x;
         this.PosY = y;
-         this.location = new PVector(x,y);
+        this.location = new PVector(x,y);
+
         //this.acceleration = new PVector();
     }
     public boolean CheckifSolid(){
-
         return this.isSolid;
     }
     public void MoveY(float direction){
@@ -31,6 +32,7 @@ public class Entity{
 
     }
     public void MoveX(float direction){
+                    
         this.objectshape.translate(direction,0);
         this.PosX = this.PosX + direction;
         //location = new PVector(this.objectshape.getVertexX(1),this.objectshape.getVertexY(1));
@@ -38,7 +40,12 @@ public class Entity{
     }
      public void Display(){
          fill(c);
-         shape(this.objectshape);
+      //   pushMatrix();
+        // translate(this.PosX,this.PosY);
+
+         shape(this.objectshape); 
+        // popMatrix();
+
 
      }
      public void setPosY(float y){
@@ -53,7 +60,7 @@ public class Entity{
          this.objectshape = shape;
      }
      public boolean Check_BorderY(){
-         if(this.PosY > height)
+         if(this.PosY > height || this.PosY < 0)
             return true;
         else 
             return false;

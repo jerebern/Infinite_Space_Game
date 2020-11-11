@@ -8,7 +8,9 @@
             //x3 : (width/2 + 100) * 0.75,height - 250,
             //x2 : width/2 + 100,height - 150
                                                         //x1                       x2                  x3
-        super(1,3,5,10,createShape(TRIANGLE,width/2, height - 100,width/2 + 50,height - 100,(width/2 + 50) * 0.95,height - 150), width/2, height - 30, 76, 96, 173);
+        
+        //tracer a partir de zero
+        super(1,3,5,10,createShape(TRIANGLE,width/2, height - 100,width/2 + 50,height - 100,(width/2 + 50) * 0.95,height - 150), width/2, height - 30, 76, 96, 173,250);
        
         Score = 0;
         input = new Input();
