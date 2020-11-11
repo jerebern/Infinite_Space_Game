@@ -5,7 +5,7 @@ public class Laser extends Entity {
         Active = false;
     }
     public Laser (float x, float y, int speedY) {
-        super(181, 42, 42, true,createShape(RECT,x,y,10,10),x,y);
+        super(181, 42, 42, true,createShape(RECT,x,y,10,30),x,y);
         Active = true;
         this.speedY = speedY;
     }

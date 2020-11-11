@@ -20,7 +20,7 @@ void setup() {
     this.background = new Background(0,0,0);
     surface.setTitle("Infinite Space Game!");
     ennemy = new Clyde(random(0,width),175);
-    asteroid = new Asteroid(random(0,width));
+ 
 }
 // main loop
 void draw() {

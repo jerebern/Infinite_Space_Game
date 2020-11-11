@@ -13,7 +13,7 @@ public class Clyde extends Enemy {
         }
     }
     public void Attack(){
-        if(random(0,100) < 5){
+        if(random(0,100) < 0.5){
             super.Attack(1);
         }
     }

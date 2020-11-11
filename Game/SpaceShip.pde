@@ -72,9 +72,8 @@ public class SpaceShip extends Entity{
         }
     }
     public void Attack(){
-        
-    }
 
+    }
     public void Display(){
         super.Display();
         for(int i = 0; i < MaxLaser; i++){
