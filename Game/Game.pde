@@ -44,6 +44,7 @@ void draw() {
     player.Actions();
     player.Display();
     ennemy.Display();
+    ennemy.move();
 
     break;
 
