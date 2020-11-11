@@ -9,6 +9,7 @@ TitleScreen titleScreen;
 Background background;
 Input input;
 Player player;
+Enemy ennemy;
 boolean DebugMode = true;
 void setup() {
     player = new Player();
@@ -17,7 +18,7 @@ void setup() {
     this.titleScreen = new TitleScreen();
     this.background = new Background(0,0,0);
     surface.setTitle("Infinite Space Game!");
-
+    ennemy = new Clyde(random(0,width),175);
 }
 // main loop
 void draw() {
@@ -42,6 +43,7 @@ void draw() {
     player.Inc_Score();
     player.Actions();
     player.Display();
+    ennemy.Display();
 
     break;
 

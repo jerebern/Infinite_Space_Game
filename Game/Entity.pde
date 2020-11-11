@@ -2,6 +2,9 @@
 
 public class Entity{
     protected color c;
+    private int r;
+    private int g;
+    private int b;
     protected boolean  isSolid;
     protected PShape objectshape;
     private PVector location;
@@ -14,11 +17,14 @@ public class Entity{
      
     public Entity(int r, int g, int b, boolean isSolid, PShape objectshape,float x, float y) {
         this.c = color(r,g,b);
+        this.r = r;
+        this.g = g;
+        this.b = b;
         this.isSolid = isSolid;
         this.objectshape = objectshape;
         this.PosX = x;
         this.PosY = y;
-        this.location = new PVector(x,y);
+       // this.location = new PVector(random(0, width),50);
 
         //this.acceleration = new PVector();
     }
@@ -39,10 +45,12 @@ public class Entity{
 
     }
      public void Display(){
-         fill(c);
+  
       //   pushMatrix();
         // translate(this.PosX,this.PosY);
-
+        //noStroke();
+         //fill(c);
+         this.objectshape.setFill(c);
          shape(this.objectshape); 
         // popMatrix();
 
