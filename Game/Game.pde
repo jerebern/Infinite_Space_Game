@@ -39,8 +39,9 @@ void draw() {
         break;
     case INGAME:
 
-    player.Display();
+    player.Inc_Score();
     player.Actions();
+    player.Display();
 
     break;
 
