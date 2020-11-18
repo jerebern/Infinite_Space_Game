@@ -36,10 +36,13 @@ public class SpaceShip extends Entity{
         
     }   
     public void CheckifHit(Laser lasers[]){
+        if(Alive){
+
         for(Laser laser : lasers){
         if(laser.CheckIfActive() && super.Check_Colision(laser)){
             this.TakeHit();
             laser.SwitchToinactive();
+        }
         }
         }
     }
@@ -69,6 +72,7 @@ public class SpaceShip extends Entity{
     }
     public void Attack(int direction){
       //  println("POW POW");
+      if(Alive){
         if(timeSinceLastattack < millis()){
          for(int i = 0; i < MaxLaser; i++){
              if(!lasers[i].CheckIfActive()){
@@ -79,6 +83,8 @@ public class SpaceShip extends Entity{
 
          }
         }
+      }
+
     }
     public void Attack(){
 
@@ -87,7 +93,9 @@ public class SpaceShip extends Entity{
         return lasers;
     }
     public void Display(){
-        super.Display();
+        if(Alive){
+         super.Display();
+        }
         for(int i = 0; i < MaxLaser; i++){
             if(lasers[i].CheckIfActive()){
                 lasers[i].Display();
