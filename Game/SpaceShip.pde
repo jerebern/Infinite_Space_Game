@@ -20,6 +20,7 @@ public class SpaceShip extends Entity{
       
     public SpaceShip (int Damage, int HitPoints, int MaxHitPoints, float Speed, PShape shape, float posX, float posY, int r, int g, int b, int acttackSpeed){
         super(r, g, b, true, shape, posX, posY);
+        this.Damage = Damage;
         this.Alive = true;
         this.HitPoints = HitPoints;
         this.MaxHitPoints = MaxHitPoints;
@@ -34,6 +35,14 @@ public class SpaceShip extends Entity{
          }
         
     }   
+    public void CheckifHit(Laser lasers[]){
+        for(Laser laser : lasers){
+        if(laser.CheckIfActive() && super.Check_Colision(laser)){
+            this.TakeHit();
+            laser.SwitchToinactive();
+        }
+        }
+    }
 
     public int GetHitPoint(){
         return HitPoints;
@@ -73,6 +82,9 @@ public class SpaceShip extends Entity{
     }
     public void Attack(){
 
+    }
+    public Laser[] getLasers(){
+        return lasers;
     }
     public void Display(){
         super.Display();

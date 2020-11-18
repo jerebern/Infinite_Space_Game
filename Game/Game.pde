@@ -49,6 +49,8 @@ void draw() {
     ennemy.move();
     ennemy.Attack();
     asteroid.Display();
+    player.CheckifHit(ennemy.getLasers());
+    ennemy.CheckifHit(player.getLasers());
 
     break;
 
