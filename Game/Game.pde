@@ -41,16 +41,15 @@ void draw() {
             gameState = GameState.QUIT;
         break;
     case INGAME:
-
-    player.Inc_Score();
-    player.Actions();
-    player.Display();
-    ennemy.Display();
-    ennemy.move();
-    ennemy.Attack();
-    asteroid.Display();
-    player.CheckifHit(ennemy.getLasers());
-    ennemy.CheckifHit(player.getLasers());
+     asteroid.Display();
+     player.Inc_Score();
+     player.Actions();
+     player.Display();
+     ennemy.Display();
+     ennemy.move();
+     ennemy.Attack();
+     player.CheckifHit(ennemy.getLasers());
+     ennemy.CheckifHit(player.getLasers());
 
     break;
 

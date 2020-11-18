@@ -12,7 +12,7 @@ public class Asteroid extends Entity{
         //TODO add private int for direction in laser for bouncing
     }
     public boolean Check_BorderY(){
-         if(this.PosY > height)
+         if(this.position.y > height)
             return true;
         else
             return false;

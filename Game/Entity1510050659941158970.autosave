@@ -1,9 +1,11 @@
-//to do colision boxe 
+  //to do colision boxe 
 
 public class Entity{
     protected color c;
     protected boolean  isSolid;
     protected PShape objectshape;
+    private PVector location;
+    private PVector acceleration;
     private float radius;
     //protected float PosX;
     //protected float PosY;
@@ -86,30 +88,21 @@ public class Entity{
          this.position.x = x;
 
      }
-     public PVector getPosition(){
-         return position;
-     }
      public void setObjectShape(PShape shape){
          this.objectshape = shape;
      }
      //Possible solution https://processing.org/examples/circlecollision.html
      //Check colision with another entity 
      public boolean Check_Colision(Entity entity){
-         PVector distanceVector;
-         distanceVector = PVector.sub(this.position, entity.getPosition());
-         float distanceVectMag = distanceVector.mag();
-         float distanceTocolide = this.radius + entity.getRadius();
-
-         if(distanceTocolide > distanceVectMag){
-             println("distanceVectmag= " + distanceVectMag);
-             println("distancetoColide=" + distanceTocolide);
+       //  if((this.PosX + radius == entity.getPosX() + entity.getRadius()) && (this.PosY + radius == entity.getPosY() + entity.getRadius())){
+            // print("Colision");
              return true;
-         }
-         return false;
+       //  }
+    //  return false;
      }
 
      public boolean Check_BorderY(){
-         if(this.position.y > height || this.position.y < 0)
+         if(this.position.y > height || this.position.x < 0)
             return true;
         else 
             return false;

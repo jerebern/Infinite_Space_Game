@@ -1,4 +1,4 @@
-//to do colision boxe 
+  //to do colision boxe 
 
 public class Entity{
     protected color c;
@@ -109,7 +109,7 @@ public class Entity{
      }
 
      public boolean Check_BorderY(){
-         if(this.position.y > height || this.position.y < 0)
+         if(this.position.y > height || this.position.x < 0)
             return true;
         else 
             return false;

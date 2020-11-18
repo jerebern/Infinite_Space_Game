@@ -1,8 +1,8 @@
 public class Enemy extends SpaceShip {
     private int timeSinceLastMove;
 
-    public Enemy (int Damage, int HitPoints, int MaxHitPoints, float Speed, PShape shape, float posX, float posY, int r, int g, int b, int acttackSpeed) {
-        super(Damage,HitPoints,MaxHitPoints,Speed,shape,posX,posY,r,g,b,acttackSpeed);
+    public Enemy (int Damage, int HitPoints, int MaxHitPoints, float Speed, PShape shape, float posX, float posY, int r, int g, int b, int acttackSpeed,float radius) {
+        super(Damage,HitPoints,MaxHitPoints,Speed,shape,posX,posY,r,g,b,acttackSpeed,radius);
     }
     public void move(){
 

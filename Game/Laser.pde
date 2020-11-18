@@ -20,7 +20,7 @@ public class Laser extends Entity {
 
     }
     public void Display(){
-        super.MoveY(speedY);
+        super.MoveY(speedY); 
         if(super.Check_BorderY())
             Active = false;
         super.Display();

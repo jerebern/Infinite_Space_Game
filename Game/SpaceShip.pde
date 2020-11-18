@@ -18,8 +18,8 @@ public class SpaceShip extends Entity{
         Alive = true;
     }
       
-    public SpaceShip (int Damage, int HitPoints, int MaxHitPoints, float Speed, PShape shape, float posX, float posY, int r, int g, int b, int acttackSpeed){
-        super(r, g, b, true, shape, posX, posY);
+    public SpaceShip (int Damage, int HitPoints, int MaxHitPoints, float Speed, PShape shape, float posX, float posY, int r, int g, int b, int acttackSpeed,float radius){
+        super(r, g, b, true, shape, posX, posY,radius);
         this.Damage = Damage;
         this.Alive = true;
         this.HitPoints = HitPoints;
@@ -72,7 +72,7 @@ public class SpaceShip extends Entity{
         if(timeSinceLastattack < millis()){
          for(int i = 0; i < MaxLaser; i++){
              if(!lasers[i].CheckIfActive()){
-                 lasers[i] = new Laser(this.PosX + 20, this.PosY - 125,10 * direction);
+                 lasers[i] = new Laser(this.position.x + 20, this.position.y - 125,10 * direction);
                  timeSinceLastattack = millis() + acttackSpeed;
                  break;
              }
