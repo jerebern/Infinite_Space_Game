@@ -64,6 +64,9 @@ public class SpaceShip extends Entity{
         if(Check_BorderX())
          MoveX(Speed);       
     }
+    public boolean getAlive(){
+        return Alive;
+    }
     public void MoveRight(){
         MoveX(Speed);
         //reverse if return true
