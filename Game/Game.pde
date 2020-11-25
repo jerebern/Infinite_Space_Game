@@ -43,7 +43,7 @@ public Enemy Generate_Enemy(){
     Enemy enemy;
    // ennemy = new Clyde(random(0,width),175);
     float RdnEnemy = random( 0 ,100);
-    if(RdnEnemy < 75){
+    if(RdnEnemy < 50){
         enemy = new Clyde(random(0,width),175);
     }
     else{

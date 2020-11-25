@@ -10,8 +10,15 @@ public class Background {
         this.Generate();
     }
     public void Animate(){
-        for(Entity entity : entities){  
-            entity.MoveY(3);
+        int i = 0;
+        int speed = 3;
+
+        for(Entity entity : entities){
+            //fait un genre de parallaxe
+            if(i > Max_Star/2){
+                speed = 4;
+            }
+            entity.MoveY(speed);
             if(entity.Check_BorderY()){
             float randomX = random(width);
              //tmp to keep track of the position
@@ -19,6 +26,7 @@ public class Background {
              entity.setPosY(0);       
              entity.setObjectShape(createShape(ELLIPSE,randomX,0,10,10));       
             }
+            i++;
         }
     }
     public void Generate(){
