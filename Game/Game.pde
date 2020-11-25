@@ -57,11 +57,9 @@ public void draw() {
     //Background need to be here in every state 
     this.background.Display();
     this.background.Animate();
-
     switch (gameState) {
      case TITLESCREEN:
         init_Game();
-
         this.titleScreen.Change_Selection();
         this.titleScreen.Display(); 
         if(this.titleScreen.SelectSomething() == "PLAY")
@@ -82,7 +80,9 @@ public void draw() {
         enemies[i].CheckifHit(player.getLasers());
 
      if(!enemies[i].getAlive()){
+         player.Inc_Score(enemies[i].getScoreAtKill());
          enemies[i] = Generate_Enemy();
+
      }
     }
      if(!player.getAlive()){
@@ -92,7 +92,6 @@ public void draw() {
 
     case ENDED:
         gameOverScreen.Display(player.GetScore());
-
 
         if(gameOverScreen.WaitForAction()){
             gameState = GameState.TITLESCREEN;

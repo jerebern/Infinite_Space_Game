@@ -2,7 +2,7 @@ public class Inky extends Enemy {
  
     private int state;
     public Inky (float x, float y) {
-        super(1,2,2,3,createShape(ELLIPSE,x,y,50,50),x,y,66, 212, 245,500,25);
+        super(1,2,2,3,createShape(ELLIPSE,x,y,50,50),x,y,66, 212, 245,500,25,40);
         state =  1;
     }
     public void move(){
