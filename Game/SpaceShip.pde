@@ -58,6 +58,12 @@ public class SpaceShip extends Entity{
         }
         return this.Alive;
     }
+    public void MoveDown(){
+        MoveY(Speed);
+    }
+    public void MoveUp(){
+        MoveY(Speed * -1);
+    }
     public void MoveLeft(){
         MoveX(Speed * -1);
         //reverse if return true;
@@ -66,6 +72,9 @@ public class SpaceShip extends Entity{
     }
     public boolean getAlive(){
         return Alive;
+    }
+    public void setSpeed(float speed){
+        this.Speed = speed;
     }
     public void MoveRight(){
         MoveX(Speed);

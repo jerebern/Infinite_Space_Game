@@ -11,7 +11,7 @@
                                                         //x1                       x2                  x3
         
         //tracer a partir de zero
-        super(1,3,5,10,createShape(TRIANGLE,width/2, height - 100,width/2 + 50,height - 100,(width/2 + 50) * 0.95,height - 150), width/2, height - 30, 76, 96, 173,250,40);
+        super(1,3,5,15,createShape(TRIANGLE,width/2, height - 100,width/2 + 50,height - 100,(width/2 + 50) * 0.95,height - 150), width/2, height - 30, 76, 96, 173,250,40);
         lastScoreUpdate = 0;
         score = 0;
         input = new Input();

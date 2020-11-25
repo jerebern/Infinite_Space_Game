@@ -15,6 +15,12 @@ public class Enemy extends SpaceShip {
                 break;
                 case "left":
                 super.MoveLeft();
+                break;
+                case "down":
+                super.MoveDown();
+                break;
+                case "up":
+                super.MoveUp();
                 break;           
             
         }

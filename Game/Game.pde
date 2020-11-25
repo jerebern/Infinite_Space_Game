@@ -10,19 +10,44 @@ private TitleScreen titleScreen;
 private Background background;
 private Input input;
 private Player player;
-private Enemy ennemy;
+private Enemy[] enemies;
+private int maxEnemies;
 private Asteroid asteroid;
 private boolean DebugMode = true;
 public void setup() {
-    player = new Player();
     gameState = GameState.TITLESCREEN;
     size(1024,768);
     this.titleScreen = new TitleScreen();
     this.background = new Background(0,0,0);
     surface.setTitle("Infinite Space Game!");
-    ennemy = new Clyde(random(0,width),175);
-    asteroid = new Asteroid(random(0,width));
     gameOverScreen = new GameOverScreen();
+    maxEnemies = 10;
+}
+
+//reset the game HERE
+public void init_Game(){
+    asteroid = new Asteroid(random(0,width));
+    player = new Player();
+    enemies = new Enemy[maxEnemies];
+
+    for(int i = 0; i < maxEnemies; i++){
+       enemies[i] = Generate_Enemy();
+    }
+    //init enemies 
+    
+}
+public Enemy Generate_Enemy(){
+    Enemy enemy;
+   // ennemy = new Clyde(random(0,width),175);
+    float RdnEnemy = random( 0 ,100);
+    if(RdnEnemy < 50){
+        enemy = new Clyde(random(0,width),175);
+    }
+    else{
+        enemy = new Inky(random(0,width),140);
+    }
+    return enemy;
+
 }
 // main loop
 public void draw() {
@@ -35,6 +60,8 @@ public void draw() {
 
     switch (gameState) {
      case TITLESCREEN:
+        init_Game();
+
         this.titleScreen.Change_Selection();
         this.titleScreen.Display(); 
         if(this.titleScreen.SelectSomething() == "PLAY")
@@ -47,12 +74,13 @@ public void draw() {
      player.Inc_Score();
      player.Actions();
      player.Display();
-     ennemy.Display();
-     ennemy.move();
-     ennemy.Attack();
-     player.CheckifHit(ennemy.getLasers());
-     ennemy.CheckifHit(player.getLasers());
-
+    for(int i = 0; i < maxEnemies; i++){
+     enemies[i].Display();
+     enemies[i].move();
+     enemies[i].Attack();
+     player.CheckifHit(enemies[i].getLasers());
+     enemies[i].CheckifHit(player.getLasers());
+    }
      if(!player.getAlive()){
         gameState = GameState.ENDED;
      }
@@ -64,7 +92,6 @@ public void draw() {
 
         if(gameOverScreen.WaitForAction()){
             gameState = GameState.TITLESCREEN;
-
         }
 
         //show score 
