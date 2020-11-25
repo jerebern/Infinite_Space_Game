@@ -6,10 +6,10 @@ public class Clyde extends Enemy {
     public void move(){
         float direction = random(0,100);
         if(direction < 33){
-            super.move("right");
+            super.move("right",200);
         }
         else {
-            super.move("left");
+            super.move("left",200);
         }
     }
     public void Attack(){

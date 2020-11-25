@@ -21,7 +21,7 @@ public void setup() {
     this.background = new Background(0,0,0);
     surface.setTitle("Infinite Space Game!");
     gameOverScreen = new GameOverScreen();
-    maxEnemies = 10;
+    maxEnemies = 5;
 }
 
 //reset the game HERE
@@ -40,7 +40,7 @@ public Enemy Generate_Enemy(){
     Enemy enemy;
    // ennemy = new Clyde(random(0,width),175);
     float RdnEnemy = random( 0 ,100);
-    if(RdnEnemy < 50){
+    if(RdnEnemy < 75){
         enemy = new Clyde(random(0,width),175);
     }
     else{
@@ -75,11 +75,15 @@ public void draw() {
      player.Actions();
      player.Display();
     for(int i = 0; i < maxEnemies; i++){
-     enemies[i].Display();
-     enemies[i].move();
-     enemies[i].Attack();
-     player.CheckifHit(enemies[i].getLasers());
-     enemies[i].CheckifHit(player.getLasers());
+        enemies[i].Display();
+        enemies[i].move();
+        enemies[i].Attack();
+        player.CheckifHit(enemies[i].getLasers());
+        enemies[i].CheckifHit(player.getLasers());
+
+     if(!enemies[i].getAlive()){
+         enemies[i] = Generate_Enemy();
+     }
     }
      if(!player.getAlive()){
         gameState = GameState.ENDED;

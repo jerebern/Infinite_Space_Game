@@ -70,25 +70,29 @@ public class SpaceShip extends Entity{
         if(Check_BorderX())
          MoveX(Speed);       
     }
-    public boolean getAlive(){
-        return Alive;
-    }
-    public void setSpeed(float speed){
-        this.Speed = speed;
-    }
     public void MoveRight(){
         MoveX(Speed);
         //reverse if return true
         if(Check_BorderX())
          MoveX( -1 * Speed);   
     }
+    public boolean getAlive(){
+        return Alive;
+    }
+    public void Die(){
+        Alive = false;
+    }
+    public void setSpeed(float speed){
+        this.Speed = speed;
+    }
+
     public void Attack(int direction){
       //  println("POW POW");
       if(Alive){
         if(timeSinceLastattack < millis()){
          for(int i = 0; i < MaxLaser; i++){
              if(!lasers[i].CheckIfActive()){
-                 lasers[i] = new Laser(this.position.x + 20, this.position.y - 125,10 * direction);
+                 lasers[i] = new Laser(this.position.x + super.getRadius() / 2, this.position.y + super.getRadius(),10 * direction);
                  timeSinceLastattack = millis() + acttackSpeed;
                  break;
              }

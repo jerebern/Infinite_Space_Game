@@ -7,7 +7,7 @@ public class Enemy extends SpaceShip {
     public void move(){
 
     }
-    public void move(String direction){
+    public void move(String direction, int timeToMove){
         if(timeSinceLastMove < millis()){
             switch (direction) {
                 case "right":
@@ -24,7 +24,7 @@ public class Enemy extends SpaceShip {
                 break;           
             
         }
-        timeSinceLastMove = millis() + 250;
+        timeSinceLastMove = millis() + timeToMove;
         }
         }
    

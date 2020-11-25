@@ -13,15 +13,15 @@ public class Inky extends Enemy {
 
             if(random(0, 100) < 0.3){
                 //Switch state to suicide until he die
-                super.setSpeed(30);
+                super.setSpeed(15);
                 state  = 2;
             }
             else{
                 if(random(1,2) == 1){
-                    super.move("left");
+                    super.move("left",100);
                 }
                 else{
-                    super.move("right");
+                    super.move("right",100);
                 }
             }
 
@@ -29,7 +29,14 @@ public class Inky extends Enemy {
             //Suicide
             case 2: 
                 super.Attack(1);
-                super.move("down");   
+                super.move("down",50); 
+ 
+
+               if(super.Check_BorderY()){
+                    println(super.getPosY());
+                    print(height);
+                       super.Die(); 
+                }
             break;
             }
         }
