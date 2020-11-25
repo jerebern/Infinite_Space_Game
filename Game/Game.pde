@@ -26,7 +26,7 @@ public void setup() {
 
 //reset the game HERE
 public void init_Game(){
-    asteroid = new Asteroid(random(0,width),random(50,200));
+    asteroid = Generate_Asteroid();
     player = new Player();
     enemies = new Enemy[maxEnemies];
 
@@ -35,6 +35,9 @@ public void init_Game(){
     }
     //init enemies 
     
+}
+public Asteroid Generate_Asteroid(){
+    return new Asteroid(random(0,width),random(50,200));
 }
 public Enemy Generate_Enemy(){
     Enemy enemy;
@@ -91,6 +94,11 @@ public void draw() {
      if(!player.getAlive()){
         gameState = GameState.ENDED;
      }
+     if(!asteroid.Isactive()){
+         asteroid = Generate_Asteroid();
+     }
+
+
     break;
 
     case ENDED:

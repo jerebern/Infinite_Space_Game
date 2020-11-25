@@ -43,4 +43,3 @@ public class Inky extends Enemy {
 
 
     }
-
