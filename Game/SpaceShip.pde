@@ -46,14 +46,39 @@ public class SpaceShip extends Entity{
         }
         }
     }
+    public void CheckifHit(SpaceShip spaceship){
+        if(Alive){
+
+        if(spaceship.getAlive() && super.Check_Colision(spaceship)){
+            this.TakeHit(2);
+            spaceship.Die();
+        }
+        }
+    }
+    public void CheckifHit(Asteroid asteroid){
+        if(Alive){
+          
+        if(super.Check_Colision(asteroid)){
+            this.TakeHit(99);
+
+        }  
+        }
+    }
 
     public int GetHitPoint(){
         return HitPoints;
     }
+    public  boolean TakeHit(int damage){
+        this.HitPoints = this.HitPoints - damage;
+        if (HitPoints <= 0){
+            this.Alive = false;
+        }
+        return this.Alive;
+    }
     //If return false the spaceship is dead 
     public boolean TakeHit(){
         this.HitPoints --;
-        if (HitPoints == 0){
+        if (HitPoints <= 0){
             this.Alive = false;
         }
         return this.Alive;

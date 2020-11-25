@@ -5,8 +5,8 @@ public class Asteroid extends Entity{
          this.bouncing = false;
         this.active = false;       
     }
-    public Asteroid(float x){
-        super(166, 163, 144,true, createShape(RECT,x,-1000,random(25,100),random(25,500)),x,-1000);
+    public Asteroid(float x, float radomRadius){
+        super(166, 163, 144,true, createShape(ELLIPSE,x,-1000,radomRadius,radomRadius),x,-1000,radomRadius/2);
         this.bouncing = true;
         this.active = true;
         //TODO add private int for direction in laser for bouncing
