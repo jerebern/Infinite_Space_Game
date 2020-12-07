@@ -35,7 +35,7 @@ public class Inky extends Enemy {
                if(super.Check_BorderY()){
                     println(super.getPosY());
                     print(height);
-                       super.Die(); 
+                       super.set_Active(false);
                 }
             break;
             }

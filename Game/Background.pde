@@ -15,9 +15,13 @@ public class Background {
 
         for(Entity entity : entities){
             //fait un genre de parallaxe
-            if(i > Max_Star/2){
+           if(i > Max_Star - 10) {
+                speed = 6;   
+            } 
+           else if(i > Max_Star/2){
                 speed = 4;
             }
+
             entity.MoveY(speed);
             if(entity.Check_BorderY()){
             float randomX = random(width);

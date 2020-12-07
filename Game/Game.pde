@@ -84,14 +84,14 @@ public void draw() {
         enemies[i].CheckifHit(player.getLasers());
         enemies[i].CheckifHit(asteroid);
 
-     if(!enemies[i].getAlive()){
+     if(!enemies[i].get_Active()){
          player.Inc_Score(enemies[i].getScoreAtKill());
          enemies[i] = Generate_Enemy();
 
      }
     }
     player.CheckifHit(asteroid);
-     if(!player.getAlive()){
+     if(!player.get_Active()){
         gameState = GameState.ENDED;
      }
      if(!asteroid.Isactive()){
